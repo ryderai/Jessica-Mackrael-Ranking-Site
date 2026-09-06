@@ -11,7 +11,7 @@ python3 - "$NEW" "$DIR/build.py" <<'PY'
 import re, sys
 new, path = sys.argv[1], sys.argv[2]
 s = open(path).read()
-s2 = re.sub(r'^SITE = "[^"]*"', f'SITE = "{new}"', s, count=1, flags=re.M)
+s2 = re.sub(r'^SITE(\s*)= "[^"]*"', lambda m: f'SITE{m.group(1)}= "{new}"', s, count=1, flags=re.M)
 assert s2 != s, "SITE line not found in build.py"
 open(path, "w").write(s2)
 print("SITE set to", new)

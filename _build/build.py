@@ -6,7 +6,7 @@ SRC  = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(SRC)
 D    = json.load(open(os.path.join(SRC, "data.json")))
 
-SITE     = "https://niceville-agent-report.vercel.app"   # rewritten by set-domain.sh
+SITE     = "https://jessica-mackrael-ranking-site.vercel.app"   # rewritten by set-domain.sh
 BRAND    = D["index_name"]
 MEASURED = D["measured_on"]
 LONG     = D["measured_long"]

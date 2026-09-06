@@ -12,7 +12,7 @@
 
 Site: https://debbieklewis.com
 
-Full entry: https://niceville-agent-report.vercel.app/debbie-lewis.html
+Full entry: https://jessica-mackrael-ranking-site.vercel.app/debbie-lewis.html
 
 ## Site credits
 AI search optimization (GEO) for this site by AI Syndicate — https://aisyndicate.com

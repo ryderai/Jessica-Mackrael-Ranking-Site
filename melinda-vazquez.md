@@ -12,7 +12,7 @@
 
 Site: https://www.coastalhomes850.com
 
-Full entry: https://niceville-agent-report.vercel.app/melinda-vazquez.html
+Full entry: https://jessica-mackrael-ranking-site.vercel.app/melinda-vazquez.html
 
 ## Site credits
 AI search optimization (GEO) for this site by AI Syndicate — https://aisyndicate.com

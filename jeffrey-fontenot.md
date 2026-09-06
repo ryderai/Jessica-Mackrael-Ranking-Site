@@ -12,7 +12,7 @@
 
 
 
-Full entry: https://niceville-agent-report.vercel.app/jeffrey-fontenot.html
+Full entry: https://jessica-mackrael-ranking-site.vercel.app/jeffrey-fontenot.html
 
 ## Site credits
 AI search optimization (GEO) for this site by AI Syndicate — https://aisyndicate.com
