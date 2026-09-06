@@ -1,0 +1,59 @@
+{
+  "unreachable_checks": [
+    {
+      "host": "karenmartineau.com",
+      "homepage_loads": false,
+      "www_variant_loads": false,
+      "what_happened": "DNS and TLS both succeed (robots.txt, /index.html and /favicon.ico all returned a real HTTP 404 from the server on repeated checks, apex and www, over several minutes), but the site itself has no working homepage - every path checked, including the bare root, returns 404 not found.",
+      "verdict": "cannot tell"
+    },
+    {
+      "host": "michaeltomlinrealestate.com",
+      "homepage_loads": false,
+      "www_variant_loads": false,
+      "what_happened": "Inconsistent: one check on /index.html (apex) returned a real HTTP 404 (meaning DNS resolved and TLS connected fine that time), but repeated later checks on the same host and on www failed at the DNS step with 'Name or service not known'. The DNS failure is intermittent rather than constant, which points to flakiness in the fetch tooling's own resolver rather than the domain being permanently unregistered - but I cannot confirm a clean, repeatable successful load, so I can't call the site itself healthy or dead with confidence.",
+      "verdict": "cannot tell"
+    },
+    {
+      "host": "realestatehomesalesexpert.com",
+      "homepage_loads": true,
+      "www_variant_loads": null,
+      "what_happened": "Homepage was not re-tested here (already established as loading in the earlier audit); this recheck focused on the four files below. All four fetch attempts (robots.txt, llms.txt, agents.md, sitemap.xml) failed identically with 'Failed to fetch or parse robots.txt' - including when I targeted robots.txt itself directly, over http instead of https, and with cache-busting query strings, always the same error. That is a tooling-side robots.txt fetch/parse failure on this specific domain, not evidence about whether the four files exist.",
+      "verdict": "cannot tell",
+      "llms_txt": false,
+      "agents_md": false,
+      "sitemap_xml": false,
+      "robots_ai_bots": [],
+      "llms_txt_evidence": "Fetch failed every time with 'Failed to fetch or parse robots.txt' (a tooling-side error on this domain), so I could not confirm the file's content or even its existence.",
+      "agents_md_evidence": "Fetch failed every time with the same robots.txt fetch/parse error; existence unconfirmed.",
+      "sitemap_xml_evidence": "Fetch failed every time with the same robots.txt fetch/parse error; existence unconfirmed.",
+      "robots_ai_bots_evidence": "robots.txt itself could not be fetched (same 'Failed to fetch or parse robots.txt' error on every attempt, https and http, direct and cache-busted), so no bot names could be read from it."
+    }
+  ],
+  "robots_allow_or_block": [
+    {
+      "host": "www.revrealtyflorida.com",
+      "bots": {
+        "GPTBot": "blocked_site_wide",
+        "ClaudeBot": "blocked_site_wide"
+      },
+      "quoted_lines": {
+        "GPTBot": "User-agent: GPTBot\nDisallow: /",
+        "ClaudeBot": "User-Agent: ClaudeBot\nDisallow: /"
+      }
+    },
+    {
+      "host": "chrisbent.myrealtyonegroup.com",
+      "bots": {
+        "GPTBot": "allowed",
+        "OAI-SearchBot": "allowed",
+        "Amazonbot": "blocked_site_wide"
+      },
+      "quoted_lines": {
+        "GPTBot": "User-agent: GPTBot\ncrawl-delay: 10",
+        "OAI-SearchBot": "User-agent: OAI-SearchBot\ncrawl-delay: 10",
+        "Amazonbot": "User-agent: Amazonbot\nDisallow: /"
+      }
+    }
+  ]
+}

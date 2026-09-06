@@ -1,0 +1,157 @@
+[
+  {
+    "name": "Judy Griffin",
+    "brokerage": "Coastal Villages Real Estate",
+    "city": "Niceville",
+    "mrp_claimed": false,
+    "mrp_evidence": "No mention of MRP (Military Relocation Professional) designation was found anywhere on coastalvillagesfl.com, including the About page (https://coastalvillagesfl.com/about) and Agent page (https://coastalvillagesfl.com/agents/judy-griffin), which list her as 'a Women's Council of Realtors® member and a Residential Resort Specialist' with no MRP letters.",
+    "other_military_credentials": [
+      "\"As a PCS-experienced, Veterans United–preferred Realtor®, I help service members\" — https://coastalvillagesfl.com/blog/move-to-eglin-afb"
+    ],
+    "personal_military_connection": null,
+    "pcs_page_url": "https://coastalvillagesfl.com/blog/move-to-eglin-afb",
+    "bases_named": [
+      "Eglin AFB",
+      "Hurlburt Field"
+    ],
+    "military_content_depth": "dedicated page",
+    "military_content_depth_note": "The page 'PCS to Eglin AFB' is a standalone article about relocating to Eglin, but the specifics are thin: BAH is discussed only qualitatively ('varies by rank and dependency status') with no dollar figures, on-base housing is not addressed, commutes are described qualitatively ('short commute to Eglin's East Gate') without minutes, only Niceville schools are called 'highly rated' with no zone data, and VA loan coverage is a generic bullet list ($0 down, no PMI) without COE/appraisal mechanics — falls short of 'detailed guide.' Contrary to the tip that this may be the strongest military content in the set, Caron Quicke's PCS page (below) is actually more concrete on commute times.",
+    "closed_sales_5yr": 168,
+    "total_volume_5yr": "$65.4M",
+    "years_licensed": 24,
+    "price_range": "$112.5K - $3.4M",
+    "active_listings": 4,
+    "license_number": "FL #BK3033539 / #3033539",
+    "homes_url": "https://www.homes.com/real-estate-agents/judy-griffin/n7ll44q/",
+    "zillow_url": "https://www.zillow.com/profile/Judy%20Griffin",
+    "zillow_rating": 4.8,
+    "zillow_review_count": 8,
+    "zillow_sales_12mo": 32,
+    "zillow_total_sales": 268,
+    "zillow_years": 24,
+    "identity_confirmed_by": "Zillow profile page itself states brokerage 'Coastal Villages Real Estate' and 'Founder of Coastal Villages Real Estate,' matching the brokerage given for this agent, and explicitly mentions 'military relocations near Eglin AFB.'",
+    "service_areas": [
+      "Niceville", "Destin", "Fort Walton Beach", "and other Emerald Coast communities (18 service areas listed on Zillow, not individually itemized in the fetched content)"
+    ],
+    "awards": [],
+    "notes": "License number appears formatted two ways across sources (#BK3033539 on her own site vs. Florida #3033539 on Homes.com) — both point to the same broker license. No MRP claim found despite the input note flagging her as a strong candidate; her strongest verified credential is 'Veterans United–preferred Realtor.' Her PCS/Eglin guide, while dedicated, is marketing-toned and light on hard data (no BAH figures, no school-zone specifics, no on-base housing discussion) — it should not be over-credited as a 'detailed guide.' Search results also surfaced a distinct 'Judy Griffin, Realtor-Keller Williams Emerald Coast' listing in Niceville; all data above was cross-checked against the Coastal Villages Real Estate brokerage to avoid conflating the two."
+  },
+  {
+    "name": "Michelle Lally",
+    "brokerage": "Coldwell Banker Realty",
+    "city": "Crestview",
+    "mrp_claimed": true,
+    "mrp_evidence": "\"As a Military Relocation Professional (MRP) and Pricing Strategy Advisor (PSA), Michelle combines local market expertise with strategic pricing knowledge\" — https://www.coldwellbanker.com/fl/crestview/agents/michelle-lally/aid-P00200000FSjzaLxteL3wGyO6uMLa67FTWMWVlBK (her Coldwell Banker brokerage profile). Her Facebook page title also reads 'Michelle Lally, Broker Associate, Realtor, MRP - Coldwell Banker Realty' (https://www.facebook.com/LallySellsByTheSea/), and Zillow's search-result snippet for her lists MRP among designations (unverified beyond snippet due to 429 errors on full fetch).",
+    "other_military_credentials": [
+      "\"Pricing Strategy Advisor (PSA)\" — https://www.coldwellbanker.com/fl/crestview/agents/michelle-lally/aid-P00200000FSjzaLxteL3wGyO6uMLa67FTWMWVlBK (not military-specific, listed alongside MRP)",
+      "\"Short Sales & Foreclosure Resource\" — same URL (not military-specific)"
+    ],
+    "personal_military_connection": "\"As a military spouse, she understands firsthand the challenges and excitement that come with PCS moves and relocating to new communities\" — https://www.coldwellbanker.com/fl/crestview/agents/michelle-lally/aid-P00200000FSjzaLxteL3wGyO6uMLa67FTWMWVlBK",
+    "pcs_page_url": null,
+    "bases_named": [
+      "Eglin AFB",
+      "Hurlburt Field",
+      "Duke Field",
+      "7th Special Forces Group"
+    ],
+    "military_content_depth": "mentions",
+    "military_content_depth_note": "Her Coldwell Banker brokerage bio names all four bases and the MRP designation in a single paragraph ('Michelle proudly serves military families stationed at Eglin Air Force Base, Hurlburt Field, Duke Field, and the 7th Special Forces Group'), but this is a bio paragraph, not a dedicated PCS page — no BAH, commute, or school-zone content was found anywhere accessible.",
+    "closed_sales_5yr": 53,
+    "total_volume_5yr": "$16.5M",
+    "years_licensed": 14,
+    "price_range": "$180,000 - $730,000",
+    "active_listings": 0,
+    "license_number": "FL #BK3263767 / #3263767",
+    "homes_url": "https://www.homes.com/real-estate-agents/michelle-lally/4cxrjtl/",
+    "zillow_url": "https://www.zillow.com/profile/LallySellsByTheSea",
+    "zillow_rating": null,
+    "zillow_review_count": null,
+    "zillow_sales_12mo": null,
+    "zillow_total_sales": null,
+    "zillow_years": null,
+    "identity_confirmed_by": "Not confirmed for the Zillow fields specifically — the Zillow profile at the URL above (handle 'LallySellsByTheSea,' matching her site/Facebook branding) returned HTTP 429 on every fetch attempt (7+ retries with increasing waits up to ~100 seconds over roughly 12 minutes). Per instructions, no substitute source was used for these numbers, so all zillow_* fields are null.",
+    "service_areas": [
+      "Crestview", "Niceville", "Destin"
+    ],
+    "awards": [
+      "\"International Diamond Society member\" — https://www.coldwellbanker.com/fl/crestview/agents/michelle-lally/aid-P00200000FSjzaLxteL3wGyO6uMLa67FTWMWVlBK"
+    ],
+    "notes": "Her own site, lallysellsbythesea.com (both http and https), could not be fetched — it returned ROBOTS_DISALLOWED errors on every attempt (robots.txt fetch itself failed with a TLS error), so PCS-page and site-specific claims could not be verified directly from her own domain; all military-credential evidence above comes from her Coldwell Banker brokerage profile page instead, which counts under the task's 'brokerage's profile of them' allowance. Search results also surfaced a distinct 'Michelle Saniei Lally' real estate agent in West Hollywood, CA on Zillow (https://www.zillow.com/profile/michelleslally) — a clear name-collision risk; the Zillow URL used above ('LallySellsByTheSea') matches her own branding/handle, not the generic name search, specifically to avoid that collision, but the identity could not be positively re-confirmed by brokerage on Zillow itself due to the persistent 429s. Zillow numbers should be re-fetched before publishing this ranking."
+  },
+  {
+    "name": "Caron Quicke",
+    "brokerage": "Waves of the Emerald Coast Realty",
+    "city": "Fort Walton Beach",
+    "mrp_claimed": false,
+    "mrp_evidence": "Her own site (fwbrealtor.com, home page and /about) never uses the letters 'MRP' or the phrase 'Military Relocation Professional' — the only credential shown there is 'REALTOR®.' However, her Homes.com brokerage-listing profile (https://www.homes.com/real-estate-agents/caron-kiefer/4zs4s4k/) lists a designation/certification field reading exactly \"Military Relocation Professional, MRP\" and an experience-areas tag including \"Military Families.\" Homes.com is a third-party aggregator, not a page she or her brokerage controls, so this is flagged here but not counted as a confirmed claim.",
+    "other_military_credentials": [],
+    "personal_military_connection": "\"I'm also a mom of a military dependent, so I understand firsthand the challenges of PCS moves, finding the right community, and creating stability during transition.\" — https://www.fwbrealtor.com/about",
+    "pcs_page_url": "https://www.fwbrealtor.com/post/pcs-to-crestview-fl-a-military-homebuyer-s-guide-near-eglin-air-force-base",
+    "bases_named": [
+      "Eglin AFB",
+      "Hurlburt Field",
+      "Duke Field",
+      "7th Special Forces Group"
+    ],
+    "military_content_depth": "dedicated page",
+    "military_content_depth_note": "The 'PCS to Crestview FL' post gives concrete commute-time ranges ('Crestview to Eglin AFB: 25–40 minutes,' 'Crestview to Hurlburt Field: 40–50 minutes') and a generic VA-loan benefits bullet list ($0 down, no PMI, competitive rates, flexible credit), but has no BAH dollar figures, no on-base vs. off-base housing discussion, and no school-zone data — more concrete on commute times than Judy Griffin's page but still short of 'detailed guide.' The site elsewhere also names Camp Rudder (not one of the six bases on this rubric) alongside Eglin/Hurlburt/Duke/7th SFG.",
+    "closed_sales_5yr": 5,
+    "total_volume_5yr": "$1.5M",
+    "years_licensed": 1,
+    "price_range": "$137,500 - $543,000",
+    "active_listings": 0,
+    "license_number": "FL #3634314",
+    "homes_url": "https://www.homes.com/real-estate-agents/caron-kiefer/4zs4s4k/",
+    "zillow_url": "https://www.zillow.com/profile/caronbw",
+    "zillow_rating": null,
+    "zillow_review_count": null,
+    "zillow_sales_12mo": null,
+    "zillow_total_sales": null,
+    "zillow_years": null,
+    "identity_confirmed_by": "Not confirmed — the candidate Zillow URL (handle 'caronbw,' plausibly 'Caron' + 'BW' for Bluewater/FWB) surfaced via web search returned HTTP 429 on every fetch attempt (5+ retries with waits up to 90+ seconds over roughly 10 minutes) and was never successfully loaded, so brokerage could not be checked against it. All zillow_* fields are null per instructions rather than guessing.",
+    "service_areas": [
+      "Fort Walton Beach", "Destin", "Navarre", "Santa Rosa Beach", "Okaloosa Island", "Niceville", "Shalimar", "Mary Esther", "Valparaiso", "Bluewater Bay", "Crestview", "Gulf Breeze"
+    ],
+    "awards": [],
+    "notes": "Name discrepancy: the brokerage/legal name given is 'Caron Quicke' (matches LinkedIn, Facebook 'carontherealtor', and the license lookup name pattern), but her own website consistently brands her as 'Caron Kiefer, REALTOR' (site title, About page, page titles throughout fwbrealtor.com), and the PCS blog post itself refers to her as 'Caron Quicke, REALTOR®' in body text while the site chrome says Kiefer — likely a maiden/married name or rebrand in progress; treat 'Quicke' and 'Kiefer' as the same person for this record, confirmed via the shared license number/site content, but this inconsistency should be flagged to the reader. Track record is very thin: only 1 year licensed and 5 closed sales in 5 years per Homes.com, despite the site's heavy 'best military real estate agent' marketing — a reader should weigh the marketing claims against this small sample. Prior mortgage-officer background is asserted on-site but not independently verified."
+  },
+  {
+    "name": "Cindy Zimmermann",
+    "brokerage": "Coldwell Banker Realty",
+    "city": "Niceville",
+    "mrp_claimed": false,
+    "mrp_evidence": "No mention of MRP found on cindyzsellshomes.com or her Coldwell Banker brokerage profile (https://www.coldwellbanker.com/fl/niceville/agents/cindy-zimmermann/aid-P00200000FUbLgyZ0bTKo3swkgQ1LiRXZdm3B3Fw). Credentials listed there are 'Realtor, CLHMS, RCC, SRES' — no MRP among the letters.",
+    "other_military_credentials": [],
+    "personal_military_connection": "\"My husband and I moved to the area in 1999 when he was assigned to Eglin Air Force Base as an Internal Medicine Physician.\" — https://www.coldwellbanker.com/fl/niceville/agents/cindy-zimmermann/aid-P00200000FUbLgyZ0bTKo3swkgQ1LiRXZdm3B3Fw",
+    "pcs_page_url": null,
+    "bases_named": [
+      "Eglin AFB",
+      "Hurlburt Field",
+      "Duke Field"
+    ],
+    "military_content_depth": "mentions",
+    "military_content_depth_note": "Eglin AFB, Duke Field, and Hurlburt appear only in the site's meta description / service-area list (cindyzsellshomes.com) and in the 'husband assigned to Eglin AFB' anecdote on her Coldwell Banker bio — there is no dedicated PCS page, no BAH/VA-loan/school-zone content anywhere found.",
+    "closed_sales_5yr": 56,
+    "total_volume_5yr": "$31.2M",
+    "years_licensed": 6,
+    "price_range": "$240,000 - $1.5 million",
+    "active_listings": 1,
+    "license_number": "FL #SL3482218 / #3482218",
+    "homes_url": "https://www.homes.com/real-estate-agents/cindy-zimmermann/l58ggzg/",
+    "zillow_url": "https://www.zillow.com/profile/Cindy%20Zimmermann",
+    "zillow_rating": null,
+    "zillow_review_count": null,
+    "zillow_sales_12mo": null,
+    "zillow_total_sales": null,
+    "zillow_years": null,
+    "identity_confirmed_by": "Not confirmed — the generic name-search Zillow URL returned HTTP 429 on every fetch attempt (3+ retries with waits up to 100 seconds) and was never successfully loaded, and no vanity-handle URL could be located via search. All zillow_* fields are null per instructions rather than guessing; a plain-name Zillow URL also carries real name-collision risk that was never resolved.",
+    "service_areas": [
+      "Niceville", "Bluewater Bay", "Valparaiso", "Crestview", "Fort Walton Beach", "Destin", "Miramar Beach"
+    ],
+    "awards": [
+      "\"Voted Finest real estate agent on the Emerald coast\" for 2021, 2022, 2023, 2024 and 2025 — https://www.coldwellbanker.com/fl/niceville/agents/cindy-zimmermann/aid-P00200000FUbLgyZ0bTKo3swkgQ1LiRXZdm3B3Fw",
+      "\"In 2025, I was recognized by Coldwell Banker as the top agent in the Niceville Office and received the International Diamond Society Award, placing me in the top 7% nationwide.\" — same URL"
+    ],
+    "notes": "Her 'husband assigned to Eglin AFB' anecdote establishes a personal connection to the base but does NOT use the words 'military spouse,' 'veteran,' or state that her husband was active-duty military versus a civilian/contract physician working on base — treat this as a household connection to Eglin, not a confirmed military-spouse claim, and do not upgrade it in downstream scoring without further verification. No MRP or other military-specific certification found despite heavy local service-area overlap with Eglin/Hurlburt/Duke Field."
+  }
+]
