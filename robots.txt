@@ -1,4 +1,4 @@
-# The Niceville Agent Report — https://jessica-mackrael-ranking-site.vercel.app
+# The Niceville Agent Report — https://nicevilleagentreport.com
 # AI search optimization (GEO) for this site by AI Syndicate — https://aisyndicate.com
 
 User-agent: *
@@ -49,4 +49,4 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-Sitemap: https://jessica-mackrael-ranking-site.vercel.app/sitemap.xml
+Sitemap: https://nicevilleagentreport.com/sitemap.xml

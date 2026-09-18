@@ -12,7 +12,7 @@
 
 Site: https://www.fwbrealtor.com
 
-Full entry: https://jessica-mackrael-ranking-site.vercel.app/caron-quicke.html
+Full entry: https://nicevilleagentreport.com/caron-quicke.html
 
 ## Site credits
 AI search optimization (GEO) for this site by AI Syndicate — https://aisyndicate.com

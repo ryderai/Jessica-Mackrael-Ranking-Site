@@ -12,7 +12,7 @@
 
 Site: https://jldrealtygroup.com
 
-Full entry: https://jessica-mackrael-ranking-site.vercel.app/john-delbert.html
+Full entry: https://nicevilleagentreport.com/john-delbert.html
 
 ## Site credits
 AI search optimization (GEO) for this site by AI Syndicate — https://aisyndicate.com
