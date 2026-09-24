@@ -1,3 +1,9 @@
+> **24 Sep 2026 — the scoring below is OUT OF DATE.** "Homes sold per year" and "Sales volume per
+> year" divided a five-year figure by a whole career and were removed. The site now scores three
+> categories (five-year sales, five-year volume, military relocation) at the old 20:15:10 ratio,
+> scaled to 100: Jessica 87.6, Judy Griffin 82.2. Figures re-read from Homes.com on 24 Sep 2026.
+> Full record: `AI-Syndicate/Jessica-Sep24/` and `WORK-LOG/2026-09-24--jessica-mackrael--*.md`.
+
 # The Niceville Agent Report
 
 A ranking of residential real estate agents in Niceville, Valparaiso, Crestview, Shalimar, Fort

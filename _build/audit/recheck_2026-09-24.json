@@ -1,0 +1,81 @@
+{
+ "_source": "Homes.com agent profiles, 'Prior 5 years' stats block, read 24 Sep 2026 by two separate fetch agents (WebFetch, cache-busted). Zillow returned 429 / a bot wall, so no rating could be re-read.",
+ "Jessica Mackrael": {
+  "sales": 149,
+  "volume": "$51.5M",
+  "years": 8,
+  "homes_url": "https://www.homes.com/real-estate-agents/jessica-mackrael/j91yzd7/"
+ },
+ "Judy Griffin": {
+  "sales": 169,
+  "volume": "$65.6M",
+  "years": 24
+ },
+ "Cindy Zimmermann": {
+  "sales": 57,
+  "volume": "$31.8M",
+  "years": 6
+ },
+ "Jeffrey Fontenot": {
+  "sales": 63,
+  "volume": "$16.4M",
+  "years": 15
+ },
+ "Michelle Lally": {
+  "sales": 53,
+  "volume": "$16.5M",
+  "years": 14
+ },
+ "Debbie Lewis": {
+  "sales": 47,
+  "volume": "$15M",
+  "years": 32
+ },
+ "John Delbert": {
+  "sales": 21,
+  "volume": "$10.2M",
+  "years": 7
+ },
+ "Caron Quicke": {
+  "sales": 5,
+  "volume": "$1.5M",
+  "years": 1,
+  "mrp": true,
+  "mrp_source": "Homes.com designations: 'Military Relocation Professional, MRP'"
+ },
+ "Melinda Vazquez": {
+  "sales": 16,
+  "volume": "$5.8M",
+  "years": 10,
+  "city": "Niceville",
+  "city_source": "Homes.com office: 350 E John Sims Pkwy #402, Niceville"
+ },
+ "Mark Hiller": {
+  "sales": 806,
+  "volume": "$326.2M",
+  "years": 13
+ },
+ "Tanya Rivera": {
+  "sales": 83,
+  "volume": "$27.2M",
+  "years": 11,
+  "homes_url": "https://www.homes.com/real-estate-agents/tanya-rivera/mslpe1h/"
+ },
+ "Tracy Powers": {
+  "sales": 1,
+  "volume": "$340K",
+  "years": 14
+ },
+ "Scott Summerlin": {
+  "sales": 2,
+  "volume": "$303K",
+  "years": null
+ },
+ "Charlie Cameron": {
+  "sales": null,
+  "volume": null,
+  "years": null,
+  "drop_figures": true,
+  "why": "The only Homes.com profile found under this name (charles-cameron/3j7vzvg) is an eXp agent with a Jacksonville office. We could not confirm it is the Niceville Charlie Cameron of Panhandle PCS, so no figures are published for him."
+ }
+}

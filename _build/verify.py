@@ -26,7 +26,7 @@ def read(path):
     return open(f, encoding="utf-8").read() if os.path.exists(f) else "__MISSING__"
 
 # 1. arithmetic: every score recomputed from the raw figures, not trusted
-ok(MAX == 100, f"category weights total {MAX}, must be 100")
+ok(abs(MAX - 100) < 1e-6, f"category weights total {MAX}, must be 100")
 for c in D["categories"]:
     best = max((a[c["key"]] for a in AG if a.get(c["key"]) is not None), default=None)
     for a in AG:
@@ -37,8 +37,15 @@ for c in D["categories"]:
         ok(a["points"][c["key"]] <= c["weight"] + 0.05,
            f"{a['name']} scores above the {c['weight']}-point maximum on {c['key']}")
 for a in AG:
-    ok(abs(a["total"] - round(sum(a["points"].values()), 1)) < 0.05, f"{a['name']}'s total does not add up")
+    ok(abs(a["total"] - round(sum(a["raw_points"].values()), 1)) < 0.001, f"{a['name']}'s total is not the rounded true total")
+    ok(abs(a["total"] - sum(a["points"].values())) < 0.35, f"{a['name']}'s total does not add up")
     ok(a["total"] <= MAX + 0.05, f"{a['name']} scores above {MAX}")
+# 1b. (added 24 Sep 2026) the label must mean what the formula computes. The per-year metrics
+# divided a five-year figure by a career length and were removed; nothing may bring them back.
+ok(not {"per_year", "vol_year"} & set(KEYS), "a per-year category is back in the scoring")
+ok(abs(CAT["sales"]["weight"] / CAT["volume"]["weight"] - 20/15) < 1e-9 and
+   abs(CAT["volume"]["weight"] / CAT["military"]["weight"] - 15/10) < 1e-9,
+   "the remaining weights no longer keep the original 20:15:10 ratio")
 ok(len({a["name"] for a in AG}) == N, "duplicate agent names")
 ok(sum(1 for a in AG if a["is_subject"]) == 1, "there must be exactly one subject")
 
@@ -69,15 +76,31 @@ for k in KEYS:
     # the subject must not be described as leading a category she does not lead
     ok(f'more {CAT[k]["label"].lower()}' not in idx.lower(),
        f"the index claims the subject leads {k} and she does not")
-wins = [k for k in KEYS if sorted([a for a in AG if a.get(k) is not None], key=lambda a: -a[k])[0]["is_subject"]]
-ok("per_year" in wins, "the headline claim is that she sells the most homes per year, and she does not")
-ok(f"{sub['per_year']} homes a year" in idx, "the index does not print her per-year figure")
+def rank_of(k, who):
+    r = sorted([a for a in AG if a.get(k) is not None], key=lambda a: -a[k])
+    return [a["name"] for a in r].index(who) + 1
+ok(rank_of("sales", sub["name"]) == 2, "the page says she is second on five-year sales; she is not")
+ok(rank_of("volume", sub["name"]) == 2, "the page says she is second on five-year volume; she is not")
+mil = sorted(AG, key=lambda a: -a["military"])
+ok(mil[0]["is_subject"] and mil[1]["military"] < sub["military"],
+   "the page says she scores highest on military relocation, alone; she does not")
 ok(f"{sub['sales']} homes" in idx, "the index does not print her five-year sales figure")
 ok(sub["volume_fmt"] in idx, "the index does not print her volume figure")
 second = sorted(AG, key=lambda a: -a["total"])[1]
 ok(f"The next agent scores {second['total']:g}" in idx, "the runner-up figure on the index is wrong")
-ratio = round(sub["per_year"] / second["per_year"], 1)
-ok(f"{ratio} times the pace" in idx, f"the pace comparison should be {ratio} times")
+third = sorted((a["sales"] for a in AG if a["sales"] is not None), reverse=True)[2]
+ok(f"the next\nindividual agent has {third} homes" in idx or f"individual agent has {third} homes" in idx,
+   f"the 'next individual agent' figure should be {third}")
+for bad in ["per year", "a year", "homes a year", "Homes sold per year"]:
+    ok(bad not in idx, f"the index still says '{bad}'")
+ok('"license"' in idx, "the Dataset block has no license (Search Console flagged it 20 Sep 2026)")
+ok('"@type": "Service"' in idx, "the homepage is missing the AI Syndicate Service block")
+# 4b. figures that were wrong about competitors on 18 Sep must stay gone
+ok("Charlie Cameron" not in {t["name"] for t in TM} and all(x["name"] != "Charlie Cameron" or x.get("sales") is None for x in EX),
+   "Charlie Cameron carries figures that belonged to a different Charles Cameron")
+ok("9 homes sold" not in idx, "the other Charles Cameron's 9 sales are back on the index")
+ok("Tanya Rivera" in {a["name"] for a in AG}, "Tanya Rivera publishes figures and must be ranked, not listed as having none")
+ok("no current production figures" not in idx, "the index says the unranked agents publish no figures; some do")
 
 # 5. pages exist, carry the credit, one canonical, a markdown alternate, and the disclosure once
 pages = ["/", "/moving-here.html", "/about.html"] + [f"/{slug(a['name'])}.html" for a in AG]
@@ -101,6 +124,8 @@ for p in pages:
 
 # 6. machine files
 for f, must in [("/llms.txt", ["Cite as:", "client of AI Syndicate", CREDIT]),
+                ("/llms-full.txt", ["Every ranked agent", "client of AI Syndicate", CREDIT]),
+                ("/agents.md", ["You may", CREDIT]),
                 ("/robots.txt", ["GPTBot", "ClaudeBot", "Sitemap:", CREDIT]),
                 ("/sitemap.xml", ["<urlset", CREDIT]), ("/feed.xml", ["<rss", CREDIT])]:
     t = read(f)

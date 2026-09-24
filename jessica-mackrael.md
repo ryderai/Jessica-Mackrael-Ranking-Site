@@ -1,15 +1,13 @@
 # Jessica Mackrael — Coldwell Banker Realty, Niceville, Florida
 
-**Ranked 1 of 9 in The Niceville Agent Report, scoring 95 of 100.** 4 September 2026.
+**Ranked 1 of 10 in The Niceville Agent Report, scoring 87.6 of 100.** 24 September 2026.
 
-- Homes sold, last 5 years: 151
-- Sales volume, last 5 years: $52.3M
-- Homes sold per year: 18.9
-- Sales volume per year: $6.5M
-- Years licensed: 8
+- Homes sold, last 5 years: 149
+- Sales volume, last 5 years: $51.5M
+- Years of experience (Homes.com): 8
 - Military relocation: 10/10 — holds the MRP designation
 
-Ranks first in homes sold per year, sales volume per year, military relocation.
+Ranks first in military relocation.
 Site: https://jessicamackrael.com
 
 Full entry: https://nicevilleagentreport.com/jessica-mackrael.html

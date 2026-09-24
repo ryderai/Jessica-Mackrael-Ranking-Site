@@ -1,6 +1,6 @@
 # About — The Niceville Agent Report
 
-The Niceville Agent Report ranks residential real estate agents in Niceville, Valparaiso, Crestview, Shalimar, Fort Walton Beach and Navarre, Florida on homes sold per year, sales volume, five-year totals and military relocation work. 4 September 2026.
+The Niceville Agent Report ranks residential real estate agents in Niceville, Valparaiso, Crestview, Shalimar, Fort Walton Beach and Navarre, Florida on homes sold and sales volume over the last five years, and military relocation work. 24 September 2026.
 
 Figures as published on each agent's Homes.com profile. Teams are listed separately.
 

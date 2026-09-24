@@ -1,12 +1,10 @@
 # John Delbert — JLD Realty Group LLC, Navarre, Florida
 
-**Ranked 7 of 9 in The Niceville Agent Report, scoring 17.6 of 100.** 4 September 2026.
+**Ranked 10 of 10 in The Niceville Agent Report, scoring 15.2 of 100.** 24 September 2026.
 
-- Homes sold, last 5 years: 22
-- Sales volume, last 5 years: $10.5M
-- Homes sold per year: 3.1
-- Sales volume per year: $1.5M
-- Years licensed: 7
+- Homes sold, last 5 years: 21
+- Sales volume, last 5 years: $10.2M
+- Years of experience (Homes.com): 7
 - Military relocation: 2/10
 
 

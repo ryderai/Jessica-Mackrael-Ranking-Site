@@ -7,8 +7,11 @@ reviews, Zillow. Raw research is in _build/audit/.
 """
 import json, glob, re
 
-MEASURED = "2026-09-04"
-MEASURED_LONG = "4 September 2026"
+MEASURED = "2026-09-24"
+MEASURED_LONG = "24 September 2026"
+
+# 24 Sep 2026 re-check of every Homes.com profile. Overrides the 4 Sep figures.
+RECHECK = {k: v for k, v in json.load(open("_build/audit/recheck_2026-09-24.json")).items() if not k.startswith("_")}
 
 homes = {a["name"]: a for a in json.load(open("_build/audit/homes_agents.json"))}
 mil   = {}
@@ -46,18 +49,19 @@ EXCLUDED = {
  "Tracy Powers": "Her Homes.com profile shows 1 closed sale against 14 years licensed, which reads as incomplete data rather than a record of her work. Not ranked on a figure we do not believe.",
  "Amelia Garrett": "No production figures are published for her anywhere we could find.",
  "Scott Summerlin": "Homes.com shows 2 closed sales in five years, too few to rank on.",
+ "Charlie Cameron": RECHECK["Charlie Cameron"]["why"],
 }
 
+# 24 Sep 2026: "Homes sold per year" and "Sales volume per year" are REMOVED. Both divided a
+# five-year figure by a whole career's length, which is not a per-year rate (see
+# memory/ranking-per-year-metric-was-wrong_2026-09-18.md). The other three keep their original
+# 20:15:10 ratio, scaled so the score is still out of 100. No weight was changed relative to another.
 CATEGORIES = [
- {"key":"per_year",   "label":"Homes sold per year",       "weight":30, "unit":"count",
-  "blurb":"Closed sales over the last five years, divided by years licensed. The measure of how busy an agent actually is right now."},
- {"key":"vol_year",   "label":"Sales volume per year",     "weight":25, "unit":"money",
-  "blurb":"Dollar volume over the last five years, divided by years licensed."},
- {"key":"sales",      "label":"Homes sold, last 5 years",  "weight":20, "unit":"count",
+ {"key":"sales",      "label":"Homes sold, last 5 years",  "weight":20*100/45, "unit":"count",
   "blurb":"Total closed sales over the last five years."},
- {"key":"volume",     "label":"Sales volume, last 5 years","weight":15, "unit":"money",
+ {"key":"volume",     "label":"Sales volume, last 5 years","weight":15*100/45, "unit":"money",
   "blurb":"Total dollar volume over the last five years."},
- {"key":"military",   "label":"Military relocation",       "weight":10, "unit":"points",
+ {"key":"military",   "label":"Military relocation",       "weight":10*100/45, "unit":"points",
   "blurb":"The MRP designation and published guidance for a PCS move to Eglin, Hurlburt, Duke Field or 7th Group."},
 ]
 
@@ -71,9 +75,12 @@ for name, c in cand.items():
     sales = num(h.get("closed_sales")) or num(m.get("closed_sales_5yr"))
     vol   = money(h.get("total_volume")) or money(m.get("total_volume_5yr"))
     yrs   = num(h.get("years_licensed")) or num(m.get("years_licensed"))
-    if sales is None or yrs in (None, 0):
+    rc = RECHECK.get(name, {})
+    if rc:
+        sales, vol, yrs = rc.get("sales"), money(rc.get("volume")), rc.get("years")
+    if sales is None:
         EXCLUDED.setdefault(name, "No published production figures could be found for this agent.")
-    mrp   = bool(m.get("mrp_claimed"))
+    mrp   = bool(m.get("mrp_claimed")) or bool(rc.get("mrp"))
     if name == "Mark Hiller": mrp = True          # listed in his Homes.com designations
     if name == "Kersten Bowman": mrp = True       # headed on his brokerage page
     if name == "John Delbert": mrp = False        # the page explains MRP, it does not claim it
@@ -85,24 +92,24 @@ for name, c in cand.items():
               4  if depth == "detailed guide" else
               2  if depth == "dedicated page" else 0)
     rows.append({
-      "name": name, "brokerage": c["brokerage"], "city": c["city"], "site": c.get("site") or "",
+      "name": name, "brokerage": c["brokerage"], "city": rc.get("city") or c["city"], "site": c.get("site") or "",
       "is_subject": name == "Jessica Mackrael",
       "team": IS_TEAM.get(name, {}).get("team_name") or ("" if name not in IS_TEAM else "team"),
       "sales": sales, "volume": vol, "years": yrs,
-      "per_year": round(sales / yrs, 1) if sales and yrs else None,
-      "vol_year": (vol / yrs) if vol and yrs else None,
       "avg_price": (vol / sales) if vol and sales else None,
-      "volume_fmt": fmt_money(vol), "vol_year_fmt": fmt_money(vol / yrs) if vol and yrs else None,
+      "volume_fmt": fmt_money(vol),
       "avg_price_fmt": fmt_money(vol / sales) if vol and sales else None,
       "military": milpts, "mrp": mrp, "guide_depth": depth,
       "pcs_page": m.get("pcs_page_url"),
       "bases": m.get("bases_named") or [],
       "designations": m.get("other_military_credentials") or [],
-      "rating": m.get("zillow_rating"), "reviews": m.get("zillow_review_count"),
+      # Zillow could not be re-read on 24 Sep 2026 (429 / bot wall). No rating is published.
+      "rating": None, "reviews": None,
       "license_number": m.get("license_number"),
       "service_areas": m.get("service_areas") or [],
       "awards": h.get("awards") or [],
-      "homes_url": h.get("homes_url") or h.get("url") or m.get("homes_url"),
+      "homes_url": (None if rc.get("drop_figures") else
+                    rc.get("homes_url") or h.get("homes_url") or h.get("profile_url") or h.get("url") or m.get("homes_url")),
       "excluded": EXCLUDED.get(name, ""),
     })
 
@@ -116,9 +123,13 @@ for cat in CATEGORIES:
     best = max((r[k] for r in ranked if r.get(k) is not None), default=None)
     for r in ranked:
         v = r.get(k)
-        r.setdefault("points", {})[k] = round(cat["weight"] * v / best, 1) if (v and best) else 0.0
+        r.setdefault("raw_points", {})[k] = (cat["weight"] * v / best) if (v and best) else 0.0
+        r.setdefault("points", {})[k] = round(r["raw_points"][k], 1)
 for r in ranked:
-    r["total"] = round(sum(r["points"].values()), 1)
+    # 24 Sep 2026: round the true total, not the sum of rounded parts (the old way understated
+    # five competitors by 0.1).
+    r["total"] = round(sum(r["raw_points"].values()), 1)
+assert abs(sum(c["weight"] for c in CATEGORIES) - 100) < 1e-6
 # Teams carry no score. Their published figures are several licensed agents' work, so a number
 # scaled against one person's record would mean nothing. They are listed with their raw figures.
 for r in teamrows:
@@ -140,7 +151,7 @@ print("ranked:", len(ranked), "| teams:", len(teamrows), "| left out:", len(out_
 for r in sorted(ranked, key=lambda x: -x["total"]):
     print("  %5.1f  %-20s %-26s %4s sales  %8s  %4s/yr  %-9s mil=%d" % (
       r["total"], r["name"][:20], r["city"][:26], r["sales"], r["volume_fmt"],
-      r["per_year"], r["vol_year_fmt"], r["military"]))
+      "", "", r["military"]))
 print("-- teams (listed, not scored) --")
 for r in teamrows:
     print("   %-20s %-32s %s sales, %s" % (r["name"][:20], r["team"][:32], r["sales"], r["volume_fmt"]))
